@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 4 (Counter App)</title>
+    <style>
+        body{
+            
+            margin-top: 0px;
+            margin-bottom: 0px;
+             background-color: rgb(222,222,222);
+        }
+        .btn{
+            display: flex;
+            justify-content: center;
+            height: 100vh;
+            align-items: center;
+        }
+        button{
+         background-color: rgb(24,235,84);
+         padding: 10px 15px;
+         margin:4px ;
+         border:none;
+         color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/dayjs.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+    function App(){
+          const clickRef= React.useRef(null);
+        const [count,setCount]=React.useState(0);
+        function click(){
+           setCount(count+1);
+        }
+        function reset(){
+            setCount(0)
+        }
+
+        function autoClick(){
+                setInterval(()=>{
+                    //.current means to basically access the element attached to ref
+                     clickRef.current.click();
+                },1000)
+        }
+
+        
+        return(
+           <div className="btn">
+            <button onClick={click} ref={clickRef}>Clicked {count} times</button>
+            <button onClick={reset}>Reset</button>
+            <button onClick={autoClick}  >AutoClick</button>
+           </div>
+        );
+    }
+             const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

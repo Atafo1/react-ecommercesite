@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<!-- THE LESSON WILL BE ON STATE AND EVENT HANDLERS-->
+<!-- Jsx is an enhanced js , its like js and html combined -->
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+         
+    <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
+     <script src="https://unpkg.com/supersimpledev/react.js"></script><!-- used to access the react external library for building apps and websites -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script><!-- used to access the react external library for building apps and websites -->
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script> <!-- this is an external library called babel which is a js
+    complier to translate languages into js -->
+    <script type="text/babel">
+    //  note: in jsx all elements need a closing tag .<input /> shortcut for <input></input>
+    
+      function ChatInput(){
+        
+        return(
+            <>{/* <> are called fragment they allow grouping of elements without
+                 creating an extra div*/}
+              <input 
+                    placeholder="Send the message to Chatbot"  
+                     size="30" 
+              />
+              <button>Send</button>
+            </>
+        );
+      }function ChatMessage({message,sender}){
+          
+            return (
+                <div>
+                    {/*  shorcut for the if statement ,if sender is equal to 
+                        robot then it returns the image*/}
+                 {sender === "robot" &&  
+                    ( <img src="robotpic.png"  width="50"/>)
+                }
+                 {message}
+                {sender ==="user" && 
+                    (<img src="profilepic.png"  width="50"/>)
+                }
+                </div>
+            );
+          }
+        function ChatMessages(){
+           // below is another shortcut to write the declaration the current value function
+      //and the updater function
+        const [chatMessages,setChatMessages]=  React.useState([
+
+                {
+                   message:"hello chatbot",
+                   sender:"user" ,
+                   id:"id1"
+                },
+                 
+                 {
+                   message:"Hello! How can I help you?",
+                   sender:"robot",
+                   id:"id2"
+                },
+                {
+                   message:"can you get me today's date?",
+                   sender:"user" ,
+                   id:"id3"
+                },
+                 {
+                   message:"Today is September",
+                   sender:"robot" ,
+                   id:"id4"
+                }
+            ]
+
+          );
+      // this the shortcut to write the declaration the current value function
+      //and the updater function
+
+        //  const [chatMessages,setChatMessages]=array;
+         // const chatMessages= array[0];   
+       //the keyword set used below is to update variables. updater function
+     //  const setChatMessages=array[1];
+            //STATE IS DATA THAT IS CONNECTED TO THE HTML
+            function sendMessage(){
+              //.push helps to add something to the last or the back of the collection
+             setChatMessages([
+              //bellow the ... represents the spread operator it is used copy
+              //arays
+              ...chatMessages,
+              {
+                message:'text',
+                sender:'user',
+                id:crypto.randomUUID()
+              }
+            ]);
+             
+            }
+            return (
+                <>
+                {/*the onclick below is an example of an event and the sendMessage function is the example of 
+                  an event handler it respond to the event */}
+                <button onClick={sendMessage}>SendMessage</button>
+             { chatMessages.map((chatMessage) =>{
+                    return(
+                        <ChatMessage
+                        message={chatMessage.message}
+                        sender={chatMessage.sender}
+                        key={chatMessage.id}
+                        />
+                       );
+               }) }
+               </>
+            );
+        }
+          function App(){
+            return (
+            <>
+                 <ChatInput />
+                 {/*you can put javascript directly into the function call braces like below
+                    */}
+                <ChatMessages />
+            </> 
+            );
+          }
+
+             
+      const container = document.querySelector('.js-container');  //this container is basically where everything we code will be
+    //   displayed
+      ReactDOM.createRoot(container).render(<App />);
+    //   render ,let's us display things in the container
+    </script>
+  </body>
+</html>

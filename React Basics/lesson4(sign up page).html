@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 4(Sign Up page)</title>
+    <style>
+        .box{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height:100vh;
+
+}
+        .inputSection{
+            display: flex;
+            flex-direction: column;
+        }
+        .mailBox{
+            width: 40%;
+            border-radius: 10px;
+            padding: 10px 15px;
+        }
+         .pwordBox{
+            width: 40%;
+            border-radius: 10px;
+            margin-top: 5px;
+             padding: 10px 15px;
+        }
+        .lBtn{
+            background-color: rgb(0,123,255);
+            padding: 10px 15px;
+            margin-top: 5px;
+            border: none;
+            border-radius: 7px;
+            color: white;
+        }
+        .rBtn{
+            background-color: rgb(0,123,255);
+            padding: 10px 15px;
+            margin-top: 5px;
+            margin-left:3px;
+             border: none;
+            border-radius: 7px;
+            color: white;
+        }
+    </style>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        function App(){
+             const [showPassword,setShowPassword]=React.useState(false);
+          function check(){
+                  if(showPassword){
+                   setShowPassword(false);
+                  }
+                  else{
+                    setShowPassword(true);
+                  }
+                  
+                }
+            return(
+                <div className="box">
+                    <h2>Hello,Welcome to my website</h2>
+                    <div className="inputSection">
+                        <input 
+                        placeholder="Email"
+                        size="50"
+                        className="mailBox"
+                        />
+                        <div>
+                            <input
+                            type={showPassword?"password":"text"}
+                            placeholder="password"
+                            className="pwordBox"
+                            />
+                            <button className="hideBtn"  onClick={check}>Hide</button>
+                        </div>
+                    </div>
+                    <button className="lBtn">Login</button>
+                    <button className="rBtn">Sign up</button>
+                </div>
+            );
+        }
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

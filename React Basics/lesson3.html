@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson3(Counter App)</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+function Display({count,setCount}){
+     function handleClick(){
+                setCount(count+1);
+               
+             }
+          
+    return(
+        <>
+         <button onClick={handleClick}>Clicked {count} {count>=1?"time":"times"}</button>
+        
+         </>
+    );
+}
+       
+        function App(){
+           
+             const [count,setCount]=React.useState(0);
+              function handleReset(){
+                setCount(0);
+               
+             }
+            return(
+                <>
+                <Display count={count} setCount={setCount}/>
+                 <Display count={count} setCount={setCount}/>
+                <button onClick={handleReset}>Reset</button>
+                 </>
+            );
+           
+        }
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+    </script>
+  </body>
+</html>

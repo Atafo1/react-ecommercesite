@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Lesson 2</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        
+            function ProductDetails({imageSrc,message,price,Discount}){
+            return(
+             <div>
+             <img src={imageSrc} width="150"/>
+              <h3>{message}</h3>
+{/* down below is a ternary operator like an if else statement
+     this is the format " value1 ? value 2: value3 meaning if value1 is true 
+     print value2 else value 3"*/}
+              {Discount ?
+                (
+                <>
+                    <h3><del>Price:${price}</del></h3>
+                    <h3>Discount price:{Discount}</h3>
+                </>
+            ) : (<h3>Price:${price}</h3>)
+             }
+              <button>Add to Cart</button>
+             </div>
+            );
+        }
+       function App(){
+        return(
+            <>
+                <ProductDetails imageSrc="cotton-socks.png" message="Cotton Socks" price="10.90" Discount="4"/>
+                <ProductDetails imageSrc="tennis-balls.png" message="Tennis balls" price="6.00"  Discount="5.60"/>
+                <ProductDetails imageSrc="plain-t-shirt.png" message="Plain T-Shirts" price="7.99"  Discount="6.70"/>
+            </>
+        );
+       }
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

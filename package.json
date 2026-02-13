@@ -1,0 +1,20 @@
+{
+  "name": "reactcourse",
+  "version": "1.0.0",
+  "main": "react-basics.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "mktest": "mkdir test",
+    "rmtest": "rmdir test"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "supersimpledev": "^8.6.4"
+  }
+}

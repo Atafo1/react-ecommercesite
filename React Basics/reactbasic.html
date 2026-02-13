@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<!-- Jsx is an enhanced js , its like js and html combined -->
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+         
+    <script src="https://unpkg.com/supersimpledev@8.6.4/external-library.js"></script>
+     <script src="https://unpkg.com/supersimpledev/react.js"></script><!-- used to access the react external library for building apps and websites -->
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script><!-- used to access the react external library for building apps and websites -->
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script> <!-- this is an external library called babel which is a js
+    complier to translate languages into js -->
+    <script type="text/babel">
+        const button=<button>hello</button>
+        const paragraph= <p>paragraph of text </p>
+
+        const div = (
+            <div>
+              <button>hello</button>
+              <p>paragraph of text {2+2}</p>
+            </div>
+        );
+      const container = document.querySelector('.js-container');  //this container is basically where everything we code will be
+    //   displayed
+      ReactDOM.createRoot(container).render(div);
+    //   render ,let's us display things in the container
+    </script>
+  </body>
+</html>
