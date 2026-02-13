@@ -4,7 +4,7 @@ src folder containe the code for our website
 react code are .jsx
 the assets folder conataines images needed for our site .Basically where wewill store them
 public folder conatains files that can be accessed by the public
-.gitignore this helps us track changes in our code
+git this helps us track changes in our code 
 eslint.config.js is used eslint to highlight problems in out javascript code
 the index.html conatains the html codes for the site
 package.json has a list of packages that we need to install
@@ -15,3 +15,4 @@ and also builds the site
 npm install is to install all the packages in packages.json in that folder
 git helps track changes in our code
 A repository is just a folder where git is tracking changes
+.gitignore tells git the files to ignore or to not track changes
