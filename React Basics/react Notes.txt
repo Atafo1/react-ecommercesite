@@ -3,7 +3,7 @@ node modules folde is where npm install all packages
 src folder containe the code for our website
 react code are .jsx
 the assets folder conataines images needed for our site .Basically where wewill store them
-public folder conatains files that can be accessed by the public
+public folder conatains files that can be accessed by the vite directly
 git this helps us track changes in our code 
 eslint.config.js is used eslint to highlight problems in out javascript code
 the index.html conatains the html codes for the site
