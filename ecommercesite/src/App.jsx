@@ -1,5 +1,6 @@
 import {Route, Routes} from 'react-router';
 import {HomePage} from './pages/HomePage'
+import { CheckoutPage } from './pages/CheckoutPage';
 import './App.css'
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
     <Routes>
       {/*you can use index instead of path="" for empty paths */}
       <Route path="/" element={ <HomePage/>} />
-      <Route path="checkout" element={<div>chckout poage</div>}m />
+      <Route path="checkout" element={<CheckoutPage/>} />
     </Routes>
     </>
   )
