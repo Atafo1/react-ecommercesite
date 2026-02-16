@@ -18,3 +18,5 @@ A repository is just a folder where git is tracking changes
 .gitignore tells git the files to ignore or to not track changes
 routing helps us create multiple pages in react
 install react-router to access the routing feature
+ctrl + f to find and replace
+ctrl +shift + p to use format document
