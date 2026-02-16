@@ -16,3 +16,5 @@ npm install is to install all the packages in packages.json in that folder
 git helps track changes in our code
 A repository is just a folder where git is tracking changes
 .gitignore tells git the files to ignore or to not track changes
+routing helps us create multiple pages in react
+install react-router to access the routing feature
