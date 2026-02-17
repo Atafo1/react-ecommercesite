@@ -1,6 +1,6 @@
 
 import './HomePage.css'
-//we used .. to access the pages folder
+//we used .. to access the outer page
 import {Header} from '../components/Header'
 export function HomePage(){
     return(
