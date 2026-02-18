@@ -1,8 +1,10 @@
 import './OrderPage.css';
 import {Header} from '../components/Header'
+import BuyIcon from '../assets/images/icons/buy-again.png'
 export function OrderPage() {
   return (
     <>
+      <link rel="icon" type="image/svg+xml" href="/orders-favicon.png" />
     <title>Orders</title>
       <Header />
        
@@ -44,7 +46,7 @@ export function OrderPage() {
                 <button class="buy-again-button button-primary">
                   <img
                     class="buy-again-icon"
-                    src="images/icons/buy-again.png"
+                    src={BuyIcon}
                   />
                   <span class="buy-again-message">Add to Cart</span>
                 </button>
@@ -71,7 +73,7 @@ export function OrderPage() {
                 <button class="buy-again-button button-primary">
                   <img
                     class="buy-again-icon"
-                    src="images/icons/buy-again.png"
+                    src={BuyIcon}
                   />
                   <span class="buy-again-message">Add to Cart</span>
                 </button>
@@ -118,7 +120,7 @@ export function OrderPage() {
                 <button class="buy-again-button button-primary">
                   <img
                     class="buy-again-icon"
-                    src="images/icons/buy-again.png"
+                    src={BuyIcon}
                   />
                   <span class="buy-again-message">Add to Cart</span>
                 </button>
