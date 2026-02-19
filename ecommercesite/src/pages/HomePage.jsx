@@ -27,7 +27,10 @@ export function HomePage() {
                 .then((response)=>{
                setProducts(response.data);
           });
-          axios.get('http://localhost:3000/api/cart-items')
+            //this is called a server proxy configuration so anytime 
+      //a url starts with /api it will load the http below instaed of typing
+      //the full thing
+          axios.get('/api/cart-items')
           .then((response)=>{
             setCart(response.data);
           });
