@@ -3,6 +3,17 @@ import "./HomePage.css";
 import { Header } from "../components/Header";
 import { products } from "../../starting-code/data/products";
 export function HomePage() {
+    //fetch gest the data from the backend which in that link
+    fetch('http://localhost:3000/api/products')
+    //,then helps us get the data because fetch there is more like an
+    //asynchronous code it does not finish right away
+    //response is the output given from the backend
+    .then((response)=>{
+        //.json gives us the data attached to the response
+           response.json().then((data) =>{
+               console.log(data);
+           })
+    })
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="/home-favicon.png" />
