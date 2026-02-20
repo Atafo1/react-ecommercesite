@@ -4,9 +4,9 @@ import axios from 'axios';
 import {useEffect,useState} from 'react'
 import { Header } from "../components/Header";
 
-export function HomePage() {
+export function HomePage({cart}) {
     const [products,setProducts]=useState([]);
- const [cart,setCart]=useState([]);
+
     // fetch gest the data from the backend which in that link
     // fetch('http://localhost:3000/api/products')
   
@@ -30,10 +30,7 @@ export function HomePage() {
             //this is called a server proxy configuration so anytime 
       //a url starts with /api it will load the http below instaed of typing
       //the full thing
-          axios.get('/api/cart-items')
-          .then((response)=>{
-            setCart(response.data);
-          });
+
     },[]);
    
   return (

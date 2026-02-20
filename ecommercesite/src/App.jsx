@@ -1,4 +1,6 @@
 import {Route, Routes} from 'react-router';
+import axios from 'axios';
+import {useState,useEffect} from 'react';
 import {HomePage} from './pages/HomePage'
 import { CheckoutPage } from './pages/checkout/CheckoutPage';
 import {OrderPage} from './pages/OrderPage';
@@ -7,14 +9,21 @@ import {NfPage} from './pages/NfPage.jsx';
 import './App.css'
 
 function App() {
- 
-
+  
+     const [cart,setCart]=useState([]);
+     useEffect(()=> {
+       axios.get('/api/cart-items')
+               .then((response)=>{
+                 setCart(response.data);
+               });
+     },[]);
+      
   return (
     <>
     <Routes>
       {/*you can use index instead of path="" for empty paths */}
-      <Route path="/" element={ <HomePage/>} />
-      <Route path="checkout" element={<CheckoutPage/>} />
+      <Route path="/" element={ <HomePage cart={cart}/>} />
+      <Route path="checkout" element={<CheckoutPage cart={cart}/>} />
       <Route path="order" element={<OrderPage/>} />
       <Route path="tracking" element={<TrackPage/>}/>
       <Route path="*" element={<NfPage/>}/>
