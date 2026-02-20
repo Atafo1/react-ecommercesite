@@ -12,7 +12,9 @@ function App() {
   
      const [cart,setCart]=useState([]);
      useEffect(()=> {
-       axios.get('/api/cart-items')
+        //" ?expand=product " this is called a query parameter it lets us
+        //add info to our request ,so now it will add product details to our cart
+       axios.get('/api/cart-items?expand=product')
                .then((response)=>{
                  setCart(response.data);
                });
