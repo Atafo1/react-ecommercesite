@@ -26,7 +26,7 @@ function App() {
       {/*you can use index instead of path="" for empty paths */}
       <Route path="/" element={ <HomePage cart={cart}/>} />
       <Route path="checkout" element={<CheckoutPage cart={cart}/>} />
-      <Route path="order" element={<OrderPage/>} />
+      <Route path="order" element={<OrderPage cart={cart}/>} />
       <Route path="tracking" element={<TrackPage/>}/>
       <Route path="*" element={<NfPage/>}/>
     </Routes>
