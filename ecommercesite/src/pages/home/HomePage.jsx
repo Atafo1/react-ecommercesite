@@ -24,14 +24,20 @@ export function HomePage({cart}) {
     // LIKE DOWN BELOW IT GAVE US DIRECT ACCESS TO THE DATA IT CONVERTS
     // IT TO JSON ALREADY
     useEffect(()=> {
-            axios.get('http://localhost:3000/api/products')
-                .then((response)=>{
+        // axios.get('http://localhost:3000/api/products')
+        //         .then((response)=>{
+        //        setProducts(response.data);
+        //   });
+        const getHomeData=async () => {
+               const response= await axios.get('http://localhost:3000/api/products');
                setProducts(response.data);
-          });
+        };
+       
+       
             //this is called a server proxy configuration so anytime 
       //a url starts with /api it will load the http below instaed of typing
       //the full thing
-
+          getHomeData();
     },[]);
    
   return (

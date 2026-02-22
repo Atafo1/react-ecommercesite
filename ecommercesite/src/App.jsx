@@ -14,10 +14,12 @@ function App() {
      useEffect(()=> {
         //" ?expand=product " this is called a query parameter it lets us
         //add info to our request ,so now it will add product details to our cart
-       axios.get('/api/cart-items?expand=product')
-               .then((response)=>{
-                 setCart(response.data);
-               });
+        const fetchAppData=async()=>{
+              const response=await axios.get('/api/cart-items?expand=product')
+              setCart(response.data);
+        }
+     
+        fetchAppData();  
      },[]);
       
   return (
