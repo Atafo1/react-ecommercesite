@@ -3,7 +3,7 @@ import axios from 'axios';
 import {useState,useEffect} from 'react';
 import {HomePage} from './pages/home/HomePage'
 import { CheckoutPage } from './pages/checkout/CheckoutPage';
-import {OrderPage} from './pages/OrderPage';
+import {OrderPage} from './pages/orders/OrderPage.jsx';
 import {TrackPage} from './pages/TrackPage.jsx';
 import {NfPage} from './pages/NfPage.jsx';
 import './App.css'
