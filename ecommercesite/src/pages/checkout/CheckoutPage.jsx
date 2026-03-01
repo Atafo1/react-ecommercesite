@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 import { CheckoutHeader } from "./CheckoutHeader";
+import { DeliveryOptions } from "./DeliveryOptions";
 export function CheckoutPage({ cart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState([null]);
@@ -28,13 +29,13 @@ export function CheckoutPage({ cart }) {
       {/*This above affect the icon on the tab */}
       <title>Checkout</title>
 
-      <CheckoutHeader />
+      <CheckoutHeader cart={cart} />
       <div className="checkout-page">
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
         <OrderSummary cart={cart} deliveryOptions={deliveryOptions}/>
-
+     
          <PaymentSummary paymentSummary={paymentSummary}/>
         </div>
       </div>
