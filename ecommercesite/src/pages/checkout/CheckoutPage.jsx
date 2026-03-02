@@ -6,7 +6,7 @@ import axios from "axios";
 
 import { CheckoutHeader } from "./CheckoutHeader";
 import { DeliveryOptions } from "./DeliveryOptions";
-export function CheckoutPage({ cart }) {
+export function CheckoutPage({ cart,loadCart }) {
   const [deliveryOptions, setDeliveryOptions] = useState([]);
   const [paymentSummary, setPaymentSummary] = useState([null]);
   //we used null because its an object
@@ -22,7 +22,10 @@ export function CheckoutPage({ cart }) {
    
     }
     fetchCheckoutData();
-  }, []);
+  }, [cart]);
+  //ABOVE WE ADDED THE CART INTO THE DEPENDENCY ARRAY BECAUSE WE WANT TO RERUN
+  //THE PAYMENT SUMMARY TO ADJUST WHEN DELIVERY OPTIONS AND THINGS ARE ADDED
+  //OR CHANGED SO NOW ANYTIME CART IS ADJUSTED THE USEEFFECT RERUNS WHICH WILL MAKE THE PAYMENT SUMMARY RELOAD
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />
@@ -34,7 +37,7 @@ export function CheckoutPage({ cart }) {
         <div className="page-title">Review your order</div>
 
         <div className="checkout-grid">
-        <OrderSummary cart={cart} deliveryOptions={deliveryOptions}/>
+        <OrderSummary cart={cart} loadCart={loadCart} deliveryOptions={deliveryOptions}/>
      
          <PaymentSummary paymentSummary={paymentSummary}/>
         </div>
