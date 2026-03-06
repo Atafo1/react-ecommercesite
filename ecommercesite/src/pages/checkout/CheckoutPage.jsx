@@ -22,10 +22,21 @@ export function CheckoutPage({ cart,loadCart }) {
    
     }
     fetchCheckoutData();
+  }, []);
+    useEffect(() => {
+    const fetchPaymentData=async()=>{
+   
+    let response= await axios.get("/api/payment-summary");
+      setPaymentSummary(response.data);
+   
+    }
+    fetchPaymentData();
   }, [cart]);
   //ABOVE WE ADDED THE CART INTO THE DEPENDENCY ARRAY BECAUSE WE WANT TO RERUN
   //THE PAYMENT SUMMARY TO ADJUST WHEN DELIVERY OPTIONS AND THINGS ARE ADDED
   //OR CHANGED SO NOW ANYTIME CART IS ADJUSTED THE USEEFFECT RERUNS WHICH WILL MAKE THE PAYMENT SUMMARY RELOAD
+  // window.axios=axios;
+  // console.log(axios.post('/api/reset'))
   return (
     <>
       <link rel="icon" type="image/svg+xml" href="/cart-favicon.png" />

@@ -1,5 +1,7 @@
 import './header2.css'
 //import {Link} from 'react-router';
+import {useState} from 'react';
+import {useNavigate} from 'react-router'
 
 //The LInk feature can be used in place of the a tag to navigate without reloading page 
 //and replace href with to
@@ -13,6 +15,22 @@ export function Header({cart}){
     cart.forEach((cartItem)=>{
         totalQuanitity+=cartItem.quantity;
     })
+    
+    const [searchText,setSearchText]=useState(); 
+  
+     const navigate=useNavigate();
+      function searchBtn(){
+       navigate(`/?search=${searchText}`);
+    }
+     function saveInputText(event){
+
+            setSearchText(event.target.value);
+        }
+   
+       
+     
+   
+   
      return(
         <>
           <div className="header">
@@ -26,9 +44,9 @@ export function Header({cart}){
             </div>
             
             <div className="middle-section">
-                <input className="search-bar" type="text" placeholder="Search" />
+                <input className="search-bar" onChange={saveInputText} type="text" placeholder="Search" />
 
-                <button className="search-button">
+                <button className="search-button" onClick={searchBtn}>
                 <img className="search-icon" src={SearchIcon} />
                 </button>
             </div>

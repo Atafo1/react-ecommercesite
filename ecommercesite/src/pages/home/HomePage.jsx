@@ -3,10 +3,28 @@ import "./HomePage.css";
 import axios from 'axios';
 import {useEffect,useState} from 'react'
 import { Header } from "../../components/Header";
-
+import {useSearchParams} from 'react-router'
 import { ProductsGrid } from './ProductsGrid';
 export function HomePage({cart,loadCart}) {
     const [products,setProducts]=useState([]);
+
+
+       const [searchParams]=useSearchParams();  
+     const search=searchParams.get('search');
+
+ useEffect(()=> {
+         let url = "/api/products";
+
+  if (search) {
+    url = `/api/products?search=${search}`;
+  }
+
+     axios.get(url)
+              .then((response)=>{
+      setProducts(response.data);
+       });
+    },[search]);
+       
 
     // fetch gest the data from the backend which in that link
     // fetch('http://localhost:3000/api/products')
