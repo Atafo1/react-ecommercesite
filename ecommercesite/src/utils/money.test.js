@@ -11,3 +11,4 @@ it('displays 2 decimals',() =>{
   expect(formatMoney(100)).toBe('$1.00');
 });
 });
+//INTEGRATION TEST IS TESTING MULTIPLE UNITS OF A CODE OR COMPONENT
