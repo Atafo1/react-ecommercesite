@@ -1,9 +1,0 @@
-cd to enter a folder
-rmdir to delete folder
-cd.. to go to outer folder
-mkdir to create folder
- npx supersimpledev chatbot "your message" to send a message and recieve
- we use npm run dev to start the Vite server which allows use to view our site .Basicallky
- npm run tell the computer to look inside package.json for the section called scripts
- and then look for dev under scripts and run the command
- To create a react setup use npx create-vite@latest
