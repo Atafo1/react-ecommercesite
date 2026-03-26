@@ -13,7 +13,7 @@ export function HomePage({cart,loadCart}) {
      const search=searchParams.get('search');
 
  useEffect(()=> {
-         let url = "/api/products";
+         let url = "http://react-ecommercesitebackend.onrender.com/api/products";
 
   if (search) {
     url = `http://react-ecommercesitebackend.onrender.com/api/products?search=${search}`;
