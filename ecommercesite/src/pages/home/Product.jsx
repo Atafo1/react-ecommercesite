@@ -10,7 +10,7 @@ export function Product({product,loadCart}) {
       const addToCart=async () => {
           //.post is to create data in the backend or add data
           setOpacity(true);
-          await axios.post("/api/cart-items", {
+          await axios.post("http://react-ecommercesitebackend.onrender.com/api/cart-items", {
             productId: product.id,
             quantity: quantity
           });

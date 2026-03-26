@@ -12,12 +12,12 @@ export function CheckoutPage({ cart,loadCart }) {
   //we used null because its an object
   useEffect(() => {
     const fetchCheckoutData=async()=>{
-    let response=   await axios .get("/api/delivery-options?expand=estimatedDeliveryTime");
+    let response=   await axios .get("http://react-ecommercesitebackend.onrender.com/api/delivery-options?expand=estimatedDeliveryTime");
      
         setDeliveryOptions(response.data);
     
 
-    response= await axios.get("/api/payment-summary");
+    response= await axios.get("http://react-ecommercesitebackend.onrender.com/api/payment-summary");
       setPaymentSummary(response.data);
    
     }
@@ -26,7 +26,7 @@ export function CheckoutPage({ cart,loadCart }) {
     useEffect(() => {
     const fetchPaymentData=async()=>{
    
-    let response= await axios.get("/api/payment-summary");
+    let response= await axios.get("http://react-ecommercesitebackend.onrender.com/api/payment-summary");
       setPaymentSummary(response.data);
    
     }

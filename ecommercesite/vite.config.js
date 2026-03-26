@@ -10,10 +10,10 @@ export default defineConfig({
       //a url starts with /api it will load the http below instaed of typing
       //the full thing
       '/api':{
-        target:'http://localhost:3000'
+        target:'http://react-ecommercesitebackend.onrender.com'
       },
       '/images':{
-         target:'http://localhost:3000'
+         target:'http://react-ecommercesitebackend.onrender.com'
       }
     }
   }

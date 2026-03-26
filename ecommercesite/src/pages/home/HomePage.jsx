@@ -16,7 +16,7 @@ export function HomePage({cart,loadCart}) {
          let url = "/api/products";
 
   if (search) {
-    url = `/api/products?search=${search}`;
+    url = `http://react-ecommercesitebackend.onrender.com/api/products?search=${search}`;
   }
 
      axios.get(url)
@@ -27,7 +27,7 @@ export function HomePage({cart,loadCart}) {
        
 
     // fetch gest the data from the backend which in that link
-    // fetch('http://localhost:3000/api/products')
+    // fetch('http://react-ecommercesitebackend.onrender.com/api/products')
   
     // ,then helps us get the data because fetch there is more like an
     // asynchronous code it does not finish right away
@@ -42,12 +42,12 @@ export function HomePage({cart,loadCart}) {
     // LIKE DOWN BELOW IT GAVE US DIRECT ACCESS TO THE DATA IT CONVERTS
     // IT TO JSON ALREADY
     useEffect(()=> {
-        // axios.get('http://localhost:3000/api/products')
+        // axios.get('http://react-ecommercesitebackend.onrender.com/api/products')
         //         .then((response)=>{
         //        setProducts(response.data);
         //   });
         const getHomeData=async () => {
-               const response= await axios.get('http://localhost:3000/api/products');
+               const response= await axios.get('http://react-ecommercesitebackend.onrender.com/api/products');
                setProducts(response.data);
         };
        
