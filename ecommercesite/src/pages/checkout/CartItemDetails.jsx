@@ -5,7 +5,7 @@ import axios from 'axios'
 import { useState } from 'react';
 export function CartItemDetails({cartItem,deliveryOptions,loadCart}) {
   const deleteCartItem=async ()=>{
-      await  axios.delete(`http://react-ecommercesitebackend.onrender.com/api/cart-items/${cartItem.productId}`);
+      await  axios.delete(`httpss://react-ecommercesitebackend.onrender.com/api/cart-items/${cartItem.productId}`);
       await loadCart();
   };
   const [quantity,setQuantity]=useState(cartItem.quantity);
@@ -19,7 +19,7 @@ export function CartItemDetails({cartItem,deliveryOptions,loadCart}) {
   };
  
   async function updateLink(){
-    await axios.put(`http://react-ecommercesitebackend.onrender.com/api/cart-items/${cartItem.productId}`,{
+    await axios.put(`httpss://react-ecommercesitebackend.onrender.com/api/cart-items/${cartItem.productId}`,{
       quantity:Number(quantity)
      
     });

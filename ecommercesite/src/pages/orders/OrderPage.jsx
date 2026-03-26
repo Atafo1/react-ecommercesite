@@ -10,7 +10,7 @@ export function OrderPage({ cart }) {
 
   useEffect(() => {
     const getOrders=async()=>{
-      const response=await axios.get("http://react-ecommercesitebackend.onrender.com/api/orders?expand=products");
+      const response=await axios.get("https://react-ecommercesitebackend.onrender.com/api/orders?expand=products");
       setOrders(response.data);
     
     }

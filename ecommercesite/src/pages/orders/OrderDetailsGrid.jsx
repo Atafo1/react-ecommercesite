@@ -5,7 +5,7 @@ import BuyIcon from "../../assets/images/icons/buy-again.png";
 import { Fragment } from "react";
 export function OrderDetailsGrid({order,loadCart,product}) {
     const insertToCart= async()=>{
-      await axios.post("http://react-ecommercesitebackend.onrender.com/api/cart-items", {
+      await axios.post("https://react-ecommercesitebackend.onrender.com/api/cart-items", {
             productId: product.id,
             quantity: 1
           });

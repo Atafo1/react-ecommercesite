@@ -1,12 +1,12 @@
 ## Intro to the Project
-This is the backend for the [ecommerce-project](https://github.com/SuperSimpleDev/ecommerce-project).
+This is the backend for the [ecommerce-project](httpss://github.com/SuperSimpleDev/ecommerce-project).
 - 95% of the code was generated with AI.
 
 ## Video Tutorials
-**Part 1 - Create the Backend:** https://youtu.be/vBprybSmJs8
+**Part 1 - Create the Backend:** httpss://youtu.be/vBprybSmJs8
 
 ## Set up this backend
-1. Make sure you have NodeJS installed (version 22+). If not, [click here to install](https://nodejs.org/).
+1. Make sure you have NodeJS installed (version 22+). If not, [click here to install](httpss://nodejs.org/).
 2. Download this code by clicking the green `Code` button (in the top-right) > Click `Download Zip`.
 3. Unzip the code. On Windows, right-click the zip file > `Extract All`. On Mac, double-click the zip file.
 4. Open this code in VSCode.

@@ -15,8 +15,8 @@
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.21.2",
+    "cors": "^2.8.6",
+    "express": "^4.22.1",
     "mysql2": "^3.14.1",
     "patch-package": "8.0.0",
     "pg": "^8.16.0",

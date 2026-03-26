@@ -69,7 +69,7 @@ export function TrackPage({ cart }) {
 
   useEffect(() => {
     axios
-      .get(`http://react-ecommercesitebackend.onrender.com/api/orders/${orderId}?expand=products`)
+      .get(`https://react-ecommercesitebackend.onrender.com/api/orders/${orderId}?expand=products`)
       .then((response) => {
         setOrder(response.data);
       });

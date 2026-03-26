@@ -11,7 +11,7 @@ export function DeliveryOptions({cartItem,deliveryOptions,loadCart}) {
           priceString = `${formatMoney(deliveryOption.priceCents)}-Shipping`;
         }
         const updateDeliveryOption=async ()=>{
-          await axios.put(`http://react-ecommercesitebackend.onrender.com/api/cart-items/${cartItem.productId}`,{
+          await axios.put(`https://react-ecommercesitebackend.onrender.com/api/cart-items/${cartItem.productId}`,{
             deliveryOptionId:deliveryOption.id
           });
           await loadCart();

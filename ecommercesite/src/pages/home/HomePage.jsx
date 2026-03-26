@@ -13,10 +13,10 @@ export function HomePage({cart,loadCart}) {
      const search=searchParams.get('search');
 
  useEffect(()=> {
-         let url = "http://react-ecommercesitebackend.onrender.com/api/products";
+         let url = "https://react-ecommercesitebackend.onrender.com/api/products";
 
   if (search) {
-    url = `http://react-ecommercesitebackend.onrender.com/api/products?search=${search}`;
+    url = `https://react-ecommercesitebackend.onrender.com/api/products?search=${search}`;
   }
 
      axios.get(url)
@@ -27,7 +27,7 @@ export function HomePage({cart,loadCart}) {
        
 
     // fetch gest the data from the backend which in that link
-    // fetch('http://react-ecommercesitebackend.onrender.com/api/products')
+    // fetch('https://react-ecommercesitebackend.onrender.com/api/products')
   
     // ,then helps us get the data because fetch there is more like an
     // asynchronous code it does not finish right away
@@ -42,18 +42,18 @@ export function HomePage({cart,loadCart}) {
     // LIKE DOWN BELOW IT GAVE US DIRECT ACCESS TO THE DATA IT CONVERTS
     // IT TO JSON ALREADY
     useEffect(()=> {
-        // axios.get('http://react-ecommercesitebackend.onrender.com/api/products')
+        // axios.get('https://react-ecommercesitebackend.onrender.com/api/products')
         //         .then((response)=>{
         //        setProducts(response.data);
         //   });
         const getHomeData=async () => {
-               const response= await axios.get('http://react-ecommercesitebackend.onrender.com/api/products');
+               const response= await axios.get('https://react-ecommercesitebackend.onrender.com/api/products');
                setProducts(response.data);
         };
        
        
             //this is called a server proxy configuration so anytime 
-      //a url starts with /api it will load the http below instaed of typing
+      //a url starts with /api it will load the https below instaed of typing
       //the full thing
           getHomeData();
     },[]);
